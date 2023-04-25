@@ -1,0 +1,1 @@
+export const BASE_URL = "https://zany-rose-ant-wear.cyclic.app/"
