@@ -1,7 +1,7 @@
 import { LOGIN_USER_ERROR, LOGIN_USER_LOADING, LOGIN_USER_SUCCESS, LOGOUT, REGISTER_USER_ERROR, REGISTER_USER_LOADING } from "./user.types"
 
 const initialState = {
-    token:null,
+    notes_token:null,
     auth:false,
     loading:false,
     error:false
@@ -24,7 +24,7 @@ export default function userReducer(state=initialState,action){
 
         case LOGIN_USER_SUCCESS:{
             return {
-                ...state, loading:false, error:false, token:payload,auth:true
+                ...state, loading:false, error:false, notes_token:payload,auth:true
             }
         }
 

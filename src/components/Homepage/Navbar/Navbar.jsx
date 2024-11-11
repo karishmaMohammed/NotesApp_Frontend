@@ -25,7 +25,7 @@ export default function Navbar() {
   const { colorMode, toggleColorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const dispatch = useDispatch()
-  const {auth,token,loading,error} = useSelector((state)=>state.userReducer)
+  const {auth,notes_token,loading,error} = useSelector((state)=>state.userReducer)
   console.log(auth)
 
   const nav = useNavigate()

@@ -7,7 +7,7 @@ import { CREATE_NOTES_ERROR, CREATE_NOTES_LOADING, CREATE_NOTES_SUCCESS, DELETE_
 
 
 export const getNotes=()=>async(dispatch)=>{
-    const {token} = store.getState().userReducer
+    const {notes_token} = store.getState().userReducer
 
     dispatch({type:GET_NOTES_LOADING})
     try {
@@ -15,7 +15,7 @@ export const getNotes=()=>async(dispatch)=>{
         const res= await axios(BASE_URL+"/note",{
             method:"get",
             headers:{
-                Authorization:token
+                Authorization:notes_token
             }
         })
 
@@ -42,7 +42,7 @@ export const getNotes=()=>async(dispatch)=>{
 
 
 export const createNotes=(obj)=>async(dispatch)=>{
-    const {token} = store.getState().userReducer
+    const {notes_token} = store.getState().userReducer
 
     dispatch({type:CREATE_NOTES_LOADING})
     try {
@@ -51,7 +51,7 @@ export const createNotes=(obj)=>async(dispatch)=>{
             method:"post",
             data:obj,
             headers:{
-                Authorization:token
+                Authorization:notes_token
             }
         })
 
@@ -80,7 +80,7 @@ export const createNotes=(obj)=>async(dispatch)=>{
 
 
 export const deleteNotes=(id)=>async(dispatch)=>{
-    const {token} = store.getState().userReducer
+    const {notes_token} = store.getState().userReducer
 
     dispatch({type:DELETE_NOTES_LOADING})
     try {
@@ -88,7 +88,7 @@ export const deleteNotes=(id)=>async(dispatch)=>{
         const res= await axios(BASE_URL+"/note/",{
             method:"delete",
             headers:{
-                Authorization:token,
+                Authorization:notes_token,
                 id:id
             }
         })
@@ -119,7 +119,7 @@ export const deleteNotes=(id)=>async(dispatch)=>{
 
 
 export const updateNotes=(id,obj)=>async(dispatch)=>{
-    const {token} = store.getState().userReducer
+    const {notes_token} = store.getState().userReducer
 
     dispatch({type:UPDATE_NOTES_LOADING})
     try {
@@ -128,7 +128,7 @@ export const updateNotes=(id,obj)=>async(dispatch)=>{
             method:"patch",
             data:obj,
             headers:{
-                Authorization:token,
+                Authorization:notes_token,
                 id:id
             }
         })

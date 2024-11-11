@@ -19,8 +19,8 @@ import { getUser } from "../Redux/users/user.actions";
 
 export default function LoginPage(){
     const nav = useNavigate()
-    const {auth,token,loading,error} = useSelector((state)=>state.userReducer)
-    console.log(auth,token)
+    const {auth,notes_token,loading,error} = useSelector((state)=>state.userReducer)
+    console.log(auth,notes_token)
     if(auth){
         nav("/notes")
     }

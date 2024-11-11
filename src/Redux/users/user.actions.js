@@ -12,9 +12,9 @@ export const getUser=(obj)=>async(distpatch)=>{
             data:obj
         
             })
-            let {message,token,status} = data.data
+            let {message,notes_token,status} = data.data
             if(status==1){
-                distpatch({type:LOGIN_USER_SUCCESS,payload:token})
+                distpatch({type:LOGIN_USER_SUCCESS,payload:notes_token})
             }else{
                 alert(message)
                 distpatch({type:LOGIN_USER_ERROR})
