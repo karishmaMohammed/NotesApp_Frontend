@@ -4,7 +4,7 @@ let initialState = {
     loading:false,
     error:false,
     data:[],
-
+    
 }
 
 export const noteReducer =(state=initialState,action)=>{
